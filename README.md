@@ -33,7 +33,7 @@ snap_gap/
 ├── yearwise_auc_plot.py       # Temporal diagnostics for key predictors
 ├── snap_gap_analysis          # Residual-based OLS diagnostics
 ├── DATA_DICTIONARY.md         # Field-level reference for major tables
-└── readme.md                  # This document
+└── README.md                  # This document
 ```
 
 Key cleaned datasets (`clean_data/`):
@@ -87,7 +87,7 @@ exports, charts).
 
 1. **Clean family poverty + SNAP (`PM_full_fam_cleaner`)**
    ```bash
-   python PM_full_fam_cleaner
+   python PM_full_fam_cleaner.py
    ```
    - Reads `PMP?_pov_fam_raw.csv` and `PMP?_snap_fam_raw.csv`.
    - Handles sentinel values (`-9999`, etc.), normalises percentages, parses
@@ -115,7 +115,7 @@ exports, charts).
 
 4. **Append “Plus 4” tract proxies (`PM_plus4_merger`)**
    ```bash
-   python PM_plus4_merger
+   python PM_plus4_merger.py
    ```
    - Adds four household context metrics to each ZIP.
    - Outputs `clean_data/PM_plus4.csv`, the primary modelling dataset.
@@ -229,6 +229,18 @@ exports, charts).
   ZIPs for partners.
 - Automate data refresh by wrapping the cleaning scripts into a single CLI or
   notebook for future PolicyMap pulls.
+- Add continuous integration (CI) to automatically test cleaners and backtesters
+  on each commit.
 
 For questions or collaboration ideas, open an issue or reach out directly. Happy
 digging!
+
+---
+
+## License
+Licensed under the MIT License — see LICENSE for details.
+
+## Citation / Credit
+If you use this code or build on this research, please credit:  
+Auyona Ray (2025), "SNAP Gap Analysis / Household & Regional Fragility Index."
+
